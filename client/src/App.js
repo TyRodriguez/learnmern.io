@@ -101,6 +101,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <NavBar />
         <section className="playground">
           <div className="code-editor html-code">
             <div className="editor-header">HTML</div>

@@ -10,10 +10,15 @@
  const app = express();
 
  const pusher = new Pusher({
-    appId: process.env.PUSHER_APP_ID,
-    key: process.env.PUSHER_APP_KEY,
-    secret: process.env.PUSHER_APP_SECRET,
-    cluster: process.env.PUSHER_APP_CLUSTER,
+    // appId: process.env.PUSHER_APP_ID,
+    // key: process.env.PUSHER_APP_KEY,
+    // secret: process.env.PUSHER_APP_SECRET,
+    // cluster: process.env.PUSHER_APP_CLUSTER,
+    // useTLS: true,
+    appId: "1044382",
+    key: "e5f3d13cd128104328d9",
+    secret: "9f05c95ff88fc4f14415",
+    cluster: "us3",
     useTLS: true,
   });
   app.use(bodyParser.json());
