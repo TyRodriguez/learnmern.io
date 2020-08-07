@@ -15,11 +15,9 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import AppsIcon from '@material-ui/icons/Apps';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import ForumIcon from '@material-ui/icons/Forum';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const drawerWidth = 240;
 
@@ -143,6 +141,7 @@ export default function MiniDrawer() {
           </IconButton>
         </div>
         <Divider />
+        
         <List>
           {['App 1', 'App 2', 'App 3', 'App 4'].map((text, index) => (
             <ListItem button key={text}>
@@ -153,9 +152,9 @@ export default function MiniDrawer() {
         </List>
         <Divider />
         <List>
-          {['Account'].map((text, index) => (
+          {['Account', 'Sign Out'].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon><AccountCircleIcon /> </ListItemIcon>
+              <ListItemIcon> {index % 2 === 0 ? <AccountCircleIcon  /> : <ExitToAppIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
