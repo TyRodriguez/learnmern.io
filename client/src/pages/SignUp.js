@@ -86,7 +86,6 @@ class SignUp extends Component {
                   autoFocus
                 />
               </Grid>
-
               <Grid item xs={12} sm={6}>
                 <TextField
                   onChange={this.onChange}
@@ -101,7 +100,6 @@ class SignUp extends Component {
                   autoComplete="lastname"
                 />
               </Grid>
-
               <Grid item xs={12}>
                 <TextField
                   onChange={this.onChange}
@@ -116,7 +114,6 @@ class SignUp extends Component {
                   autoComplete="email"
                 />
               </Grid>
-
               <Grid item xs={12}>
                 <TextField
                   onChange={this.onChange}
@@ -133,7 +130,6 @@ class SignUp extends Component {
                   autoComplete="current-password"
                 />
               </Grid>
-
               <Grid item xs={12}>
                 <TextField
                   onChange={this.onChange}
@@ -149,7 +145,6 @@ class SignUp extends Component {
                   autoComplete="current-password"
                 />
               </Grid>
-
               <Grid item xs={12}></Grid>
             </Grid>
             <Button
