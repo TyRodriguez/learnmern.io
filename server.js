@@ -24,7 +24,7 @@ const app = express();
 // });
 
 mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/membersdb", {
+  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/usersdb", {
     useNewUrlParser: true,
     useUnifiedTopology:true
   })
