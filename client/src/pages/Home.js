@@ -12,26 +12,31 @@ class Home extends Component {
       super(props);
       this.state = {
           src: "https://stackblitz.com/edit/angular?embed=1"
-      };
-    
+      }  
   }
 
+  
   render() {
     return (
       <div className="App">
+        
         <NavBar />
         <IframeResizer
+
         log
         src={this.state.src}
-        style={{ width: '100vw', minWidth: '100%', height: '100vh'}}
+        style={{
+            width: '100vw',
+            height: '80vh',
+            paddingLeft: '5%',
+            position: 'relative',
+            overflow: 'hidden'}}
         />
-        
-        <Iframe source={this.state.src} style={{width:'100%', height:'100%'}}/>
       </div>
     );
   }
-  }
-    
+}
+   
   
   
   export default Home;
