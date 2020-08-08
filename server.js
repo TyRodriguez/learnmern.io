@@ -10,6 +10,7 @@ const bcrypt = require("bcrypt")
 const bodyParser = require("body-parser");
 const User = require("./database/models/User");
 // const Pusher = require("pusher");
+const routes = require("./routes");
 
 
 const app = express();
@@ -22,6 +23,11 @@ const app = express();
 //   useTLS: true
 // });
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+// Add routes, both API and view
+app.use(routes);
+
 mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/membersdb", {
     useNewUrlParser: true,
@@ -32,6 +38,7 @@ mongoose
 
 //middleware
 // app.use(logger("dev"));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(cors());
@@ -47,6 +54,10 @@ app.use(cookieParser("skatey-katie"))
 app.use(passport.initialize());
 app.use(passport.session());
 require("./database/config/passport")(passport)
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 
 //Routes

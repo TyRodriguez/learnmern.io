@@ -1,7 +1,7 @@
 import React from "react";
 // import { Controlled as CodeMirror } from "react-codemirror2";
 // import axios from "axios";
-import Home from "./pages/Home"
+import Home from "./pages/Home.js"
 
 
 function App() {
