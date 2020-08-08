@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar'
 import Iframe from './components/iframe-old.js';
-import LearnMernState from './components/stackblitzFrame/stackblitzFrame';
+// import LearnMernState from './components/stackblitzFrame/stackblitzFrame';
 import IframeResizer from 'iframe-resizer-react';
 
 class Home extends Component {
