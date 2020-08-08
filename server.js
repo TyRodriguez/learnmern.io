@@ -11,6 +11,7 @@ const bodyParser = require("body-parser");
 const User = require("./database/models/User");
 // const Pusher = require("pusher");
 
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
@@ -50,6 +51,7 @@ require("./database/config/passport")(passport)
 
 
 //Routes
+//add "/dashboard"
 
 app.post("/signup", (req, res) => {
   const today = new Date();
@@ -89,7 +91,7 @@ app.post("/signin", (req, res) => {
   })
     .then(user => {
       if (user) {
-        if (bcrypt.compareSync(req.body.password, user.passwprd)) {
+        if (bcrypt.compareSync(req.body.password, user.password)) {
           const payload = {
             _id: user._id,
             email: user.email
@@ -111,6 +113,7 @@ app.post("/signin", (req, res) => {
 });
 
 
+
 // app.post("/update-editor", (req, res) => {
 //   pusher.trigger("editor", "code-update", {
 //     ...req.body
@@ -124,4 +127,6 @@ app.post("/signin", (req, res) => {
 //   console.log(`Express running → PORT ${server.address().port}`);
 // });
 
-app.listen(5000,()=>{console.log("server running on port 5000")})
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}!`);
+});
