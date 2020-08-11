@@ -1,3 +1,5 @@
+
+
 const jobsReducer = (state = [], action) => {
     switch (action.type) {
       case 'SET_JOBS':
@@ -8,4 +10,5 @@ const jobsReducer = (state = [], action) => {
         return state;
     }
   };
-  export default jobsReducer;
+
+export default jobsReducer;
