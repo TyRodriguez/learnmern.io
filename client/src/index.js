@@ -7,7 +7,7 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from 'react-redux';
 import store from './store/store';
 
-//provider will allow to share store data to app and all it's child components
+//provider will allow to share store data to app and all it's child coomponent
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
