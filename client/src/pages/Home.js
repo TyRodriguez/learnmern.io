@@ -7,17 +7,28 @@ import Iframe from '../components/iframe';
 import Tabs from '../components/Tabs'
 import Footer from '../components/Footer'
 
-
-function Home() {
-  return (
-    <div>
-      <NavBar className="Nav"/>
-      <Tabs />
-      <Footer />
-      
-    </div>
-  );
+class Home extends Component {
+  render(){
+    return (
+      <div>
+        <NavBar className="Nav"/>
+        <Tabs />
+        <Footer />
+        
+      </div>
+    );
+  }
 }
+// function Home() {
+//   return (
+//     <div>
+//       <NavBar className="Nav"/>
+//       <Tabs />
+//       <Footer />
+      
+//     </div>
+//   );
+// }
 
 
 export default Home;
