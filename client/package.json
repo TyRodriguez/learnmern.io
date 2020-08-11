@@ -13,6 +13,8 @@
     "bootstrap": "^4.5.2",
     "codemirror": "^5.56.0",
     "iframe-resizer-react": "^1.0.4",
+    "lodash": "^4.17.19",
+    "moment": "^2.27.0",
     "prop-types": "^15.7.2",
     "pusher-js": "^6.0.3",
     "pushid": "^1.0.0",
