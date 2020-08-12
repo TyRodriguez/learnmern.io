@@ -15,17 +15,14 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/member">
             <Home />
           </Route>
           <Route exact path="/jobs">
             <Jobs />
           </Route>
-          <Route exact path="/free">
+          <Route exact path="/">
             <FreeUser />
-          </Route>
-          <Route exact path="/signin">
-            <SignIn />
           </Route>
           <Route exact path="/signin">
             <SignIn />
@@ -35,7 +32,6 @@ function App() {
           </Route>
         </Switch>
       </div>
-      <Footer />
     </Router>
     
   )

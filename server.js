@@ -6,14 +6,13 @@ const passport = require("passport");
 const passportLocal = require("passport-local").Strategy
 const cookieParser = require("cookie-parser")
 const session = require("express-session");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcryptjs")
 const bodyParser = require("body-parser");
 const User = require("./database/models/User");
 // const Pusher = require("pusher");
 const routes = require("./routes");
 //for jobs page
-const axios = require('axios');
-const cors = require('cors');
+// const axios = require('axios');
 
 
 const app = express();
@@ -26,10 +25,10 @@ const app = express();
 //   useTLS: true
 // });
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-// Add routes, both API and view
-app.use(routes);
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+// // Add routes, both API and view
+// app.use(routes);
 
 mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/membersdb", {
