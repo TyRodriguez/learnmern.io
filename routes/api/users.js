@@ -1,13 +1,11 @@
 const router = require("express").Router();
-const express = require("express");
-const keys = require("../../config/keys");
-const bcrypt = require("bcrypt");
+// const express = require("express");
+// const keys = require("../../config/keys");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-// Load input validation
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
-// Load User model
-const User = require("../../models/User");
+const {User} = require("../../models");
 
 router.post("/register", (req, res) => {
   // Form validation

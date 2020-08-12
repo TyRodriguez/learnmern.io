@@ -1,4 +1,4 @@
-
+// require("dotenv").config({ path: ".env" });
 const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
@@ -6,40 +6,46 @@ const passport = require("passport");
 const passportLocal = require("passport-local").Strategy
 const cookieParser = require("cookie-parser")
 const session = require("express-session");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcryptjs")
 const bodyParser = require("body-parser");
-const User = require("./models/User");
-const routes = require("./routes");
-
-
-// DB Config
-const db = require("./config/keys").mongoURI;
-
+const User = require("./models");
+const path = require("path");
+const router = require("express").Router();
+const apiRoutes = require("./routes/api");
 
 const PORT = process.env.PORT || 5000;
 const app = express();
 
+mongoose
+  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/usersdb", {
+    useNewUrlParser: true,
+    useUnifiedTopology:true
+  })
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.log(err));
 
 //middleware
 // app.use(logger("dev"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(cors());
 app.use(cors({
   origin: "https://localhost:3001",
   credentials:true
 }));
+
 app.use(
   session({ secret: "skatey-katie", resave: true, saveUninitialized: true })
 );
 app.use(cookieParser("skatey-katie"))
 app.use(passport.initialize());
 app.use(passport.session());
-require("./database/config/passport")(passport)
+// require("./config/passport")(passport)
 
 
-//Routes
-app.use(routes);
+// API Routes
+router.use("/api", apiRoutes);
+
 app.post("/signup", (req, res) => {
   const today = new Date();
   const userData = {
@@ -78,7 +84,7 @@ app.post("/signin", (req, res) => {
   })
     .then(user => {
       if (user) {
-        if (bcrypt.compareSync(req.body.password, user.password)) {
+        if (bcrypt.compareSync(req.body.password, user.passwprd)) {
           const payload = {
             _id: user._id,
             email: user.email
@@ -99,15 +105,11 @@ app.post("/signin", (req, res) => {
     });
 });
 
-//db
-mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost:27017/usersdb", {
-    useNewUrlParser: true,
-    useUnifiedTopology:true
-  })
-  .then(() => console.log("MongoDB connected"))
-  .catch(err => console.log(err));
+// If no API routes are hit, send the React app
+router.use(function(req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}!`);
+  console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
