@@ -16,7 +16,7 @@ class FreeUser extends Component {
         <Button><Link to="/free">LearnMern</Link></Button>
         <Box flexGrow={1} textAlign="right">
           <Button color="primary"><Link to="/jobs">Jobs</Link></Button>
-          <Button color="primary"><Link to="/jobs">Sign In</Link></Button>
+          <Button color="primary"><Link to="/signin">Sign In</Link></Button>
         </Box>
       </Box>
       <div>
