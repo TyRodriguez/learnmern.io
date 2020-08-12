@@ -8,11 +8,12 @@ const cookieParser = require("cookie-parser")
 const session = require("express-session");
 const bcrypt = require("bcrypt")
 const bodyParser = require("body-parser");
-const User = require("./database/models/User");
+const User = require("./models/User");
 const routes = require("./routes");
-//for jobs page
-const axios = require('axios');
-const cors = require('cors');
+
+
+// DB Config
+const db = require("./config/keys").mongoURI;
 
 
 const PORT = process.env.PORT || 5000;
@@ -39,6 +40,64 @@ require("./database/config/passport")(passport)
 
 //Routes
 app.use(routes);
+app.post("/signup", (req, res) => {
+  const today = new Date();
+  const userData = {
+    email: req.body.email,
+    password: req.body.password,
+    created: today
+  };
+
+  User.findOne({
+    email: req.body.email
+  })
+    .then(user => {
+      if (!user) {
+        bcrypt.hash(req.body.password, 10, (err, hash) => {
+          userData.password = hash;
+          User.create(userData)
+            .then(user => {
+              res.json({ status: user.email + ` registered!` });
+            })
+            .catch(err => {
+              res.send("error:" + err);
+            });
+        });
+      } else {
+        res.json({ error: "User already exists" });
+      }
+    })
+    .catch(err => {
+      res.send("error" + err);
+    });
+});
+
+app.post("/signin", (req, res) => {
+  User.findOne({
+    email: req.body.email
+  })
+    .then(user => {
+      if (user) {
+        if (bcrypt.compareSync(req.body.password, user.password)) {
+          const payload = {
+            _id: user._id,
+            email: user.email
+          };
+          let token = jwt.sign(payload, process.env.SECRET_KEY, {
+            expiresIn: 1440
+          });
+          res.send(token);
+        } else {
+          res.json({ error: "User does not exist!" });
+        }
+      } else {
+        res.json({ error: "User does not exist!" });
+      }
+    })
+    .catch(err => {
+      res.send("error: " + err);
+    });
+});
 
 //db
 mongoose
