@@ -4,18 +4,37 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "concurrently \"npm start\",  \"cd client && npm start\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "client": "cd client && npm start",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "axios": "^0.19.2",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.2",
     "concurrently": "^5.2.0",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "pusher": "^3.0.1"
+    "express-session": "^1.17.1",
+    "material-ui-icons": "^1.0.0-beta.36",
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.9.27",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pusher": "^3.0.1",
+    "react-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
