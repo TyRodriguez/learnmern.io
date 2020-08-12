@@ -10,6 +10,9 @@ const bcrypt = require("bcrypt")
 const bodyParser = require("body-parser");
 const User = require("./database/models/User");
 const routes = require("./routes");
+//for jobs page
+const axios = require('axios');
+const cors = require('cors');
 
 
 const PORT = process.env.PORT || 5000;
