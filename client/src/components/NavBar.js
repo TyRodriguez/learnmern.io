@@ -10,10 +10,10 @@ class NavBar extends React.Component {
   render() {
     return (
       <Box display="flex" bgcolor="grey.200" p={2} alignItems="center">
-        <Button><Link to="/"></Link>LearnMern</Button>
+        <Button><Link to="/">LearnMern</Link></Button>
         <Box flexGrow={1} textAlign="right">
           <Button color="primary"><Link to="/jobs">Jobs</Link></Button>
-          <Button color="primary">Account</Button>
+          <Button color="primary"><Link to="/jobs">Sign In</Link></Button>
           <Button color="primary">Sign Out</Button>
         </Box>
       </Box>
