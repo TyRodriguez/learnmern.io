@@ -5,6 +5,8 @@ import Home from "./pages/Home.js";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Jobs from "./pages/Jobs.js"
+import FreeUser from "./pages/FreeUser.js"
+import SignIn from "./pages/SignIn";
 
 
 function App() {
@@ -17,6 +19,15 @@ function App() {
           </Route>
           <Route exact path="/jobs">
             <Jobs />
+          </Route>
+          <Route exact path="/free">
+            <FreeUser />
+          </Route>
+          <Route exact path="/signin">
+            <FreeUser />
+          </Route>
+          <Route exact path="/signout">
+            <FreeUser />
           </Route>
         </Switch>
       </div>
