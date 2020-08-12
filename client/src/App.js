@@ -7,7 +7,8 @@ import NavBar from "./components/NavBar";
 import Jobs from "./pages/Jobs.js"
 import FreeUser from "./pages/FreeUser.js"
 import SignIn from "./pages/SignIn";
-
+import Footer from "./components/Footer"
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -24,13 +25,17 @@ function App() {
             <FreeUser />
           </Route>
           <Route exact path="/signin">
-            <FreeUser />
+            <SignIn />
           </Route>
-          <Route exact path="/signout">
-            <FreeUser />
+          <Route exact path="/signin">
+            <SignIn />
+          </Route>
+          <Route exact path="/signup">
+            <SignUp />
           </Route>
         </Switch>
       </div>
+      <Footer />
     </Router>
     
   )

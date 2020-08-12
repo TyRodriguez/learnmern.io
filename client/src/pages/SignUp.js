@@ -118,7 +118,7 @@ class SignUp extends Component {
                 <TextField
                   onChange={this.onChange}
                   value={this.state.password}
-                  error={errors.password}
+                  // error={errors.password}
                   type="password"
                   variant="outlined"
                   required
