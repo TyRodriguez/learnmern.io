@@ -129,7 +129,6 @@ class SignUp extends Component {
                   fullWidth
                   name="password"
                   label="Password"
-                  type="password"
                   id="password"
                   autoComplete="current-password"
                 />
@@ -144,7 +143,6 @@ class SignUp extends Component {
                   fullWidth
                   name="confirmPassword"
                   label="Confirm Password"
-                  type="password"
                   id="confirmPassword"
                   autoComplete="current-password"
                 />

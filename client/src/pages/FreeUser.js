@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 // import logo from './logo.svg';
 import "../App.js";
-import NavBar from "../components/NavBar";
 // import LearnMernState from './components/stackblitzFrame/stackblitzFrame';
-import Footer from "../components/Footer";
 import IframeResizer from "iframe-resizer-react";
-import { Box, Typography, Button, IconButton } from "@material-ui/core";
-import { BrowserRouter, Link, Switxh, Route } from "react-router-dom";
+import { Box, Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 class FreeUser extends Component {
   render() {

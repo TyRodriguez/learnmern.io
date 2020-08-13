@@ -3,7 +3,7 @@ import React from "react";
 // import axios from "axios";
 import Home from "./pages/Home.js";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import NavBar from "./components/NavBar";
+//import NavBar from "./components/NavBar";
 import Jobs from "./pages/Jobs.js";
 import Box from "@material-ui/core/Box";
 import FreeUser from "./pages/FreeUser.js";

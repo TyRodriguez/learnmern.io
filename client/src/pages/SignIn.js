@@ -54,7 +54,6 @@ class SignIn extends Component {
   };
 
   render() {
-    const { errors } = this.state;
     const classes = useStyles;
 
     return (
