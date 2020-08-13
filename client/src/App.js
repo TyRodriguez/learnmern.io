@@ -4,10 +4,11 @@ import React from "react";
 import Home from "./pages/Home.js";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import Jobs from "./pages/Jobs.js"
-import FreeUser from "./pages/FreeUser.js"
+import Jobs from "./pages/Jobs.js";
+import Box from "@material-ui/core/Box";
+import FreeUser from "./pages/FreeUser.js";
 import SignIn from "./pages/SignIn";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 import SignUp from "./pages/SignUp";
 
 function App() {
@@ -35,10 +36,11 @@ function App() {
           </Route>
         </Switch>
       </div>
-      <Footer />
+      <Box mt={5}>
+        <Footer />
+      </Box>
     </Router>
-    
-  )
+  );
 }
 
-export default App
+export default App;
