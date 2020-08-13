@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -60,9 +61,11 @@ class SignIn extends Component {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
+          <Box mt={2}>
+            <Typography component="h1" variant="h5">
+              Sign in
+            </Typography>
+          </Box>
           <form className={classes.form} noValidate onSubmit={this.onSubmit}>
             <TextField
               onChange={this.onChange}
@@ -104,9 +107,11 @@ class SignIn extends Component {
             </Button>
             <Grid container>
               <Grid item>
-                <Link to="/signup" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
+                <Box mt={2}>
+                  <Link to="/signup" variant="body2">
+                    {"Don't have an account? Sign Up"}
+                  </Link>
+                </Box>
               </Grid>
             </Grid>
           </form>

@@ -1,20 +1,18 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 // import logo from './logo.svg';
-import '../App.js';
-import NavBar from '../components/NavBar'
-import Iframe from '../components/iframe';
+import "../App.js";
+import NavBar from "../components/NavBar";
+import Iframe from "../components/iframe";
 // import LearnMernState from './components/stackblitzFrame/stackblitzFrame';
-import Tabs from '../components/Tabs'
-import Footer from '../components/Footer'
+import Tabs from "../components/Tabs";
+import Footer from "../components/Footer";
 
 class Home extends Component {
-  render(){
+  render() {
     return (
       <div>
-        <NavBar className="Nav"/>
+        <NavBar className="Nav" />
         <Tabs />
-        <Footer />
-        
       </div>
     );
   }
@@ -25,10 +23,9 @@ class Home extends Component {
 //       <NavBar className="Nav"/>
 //       <Tabs />
 //       <Footer />
-      
+
 //     </div>
 //   );
 // }
-
 
 export default Home;

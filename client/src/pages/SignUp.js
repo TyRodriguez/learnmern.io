@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import Box from "@material-ui/core/Box";
 
 import { Link } from "react-router-dom";
 
@@ -66,9 +67,12 @@ class SignUp extends Component {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
+          <Box mt={2}>
+            <Typography component="h1" variant="h5">
+              Sign up
+            </Typography>
+          </Box>
+          <Box mt={2}></Box>
           <form className={classes.form} noValidate onSubmit={this.onSubmit}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
@@ -158,9 +162,11 @@ class SignUp extends Component {
             </Button>
             <Grid container justify="flex-end">
               <Grid item>
-                <Link to="/signin" variant="body2">
-                  Already have an account? Sign in
-                </Link>
+                <Box mt={2}>
+                  <Link to="/signin" variant="body2">
+                    Already have an account? Sign in
+                  </Link>
+                </Box>
               </Grid>
             </Grid>
           </form>

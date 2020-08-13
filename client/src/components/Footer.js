@@ -1,12 +1,12 @@
 import React from "react";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 
 function Footer() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="#">
+      <Link color="inherit" to="/">
         Learnmern.io
       </Link>{" "}
       {new Date().getFullYear()}
