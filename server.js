@@ -105,6 +105,26 @@ app.post("/signin", (req, res) => {
     });
 });
 
+app.get('/jobs', async (req, res) => {
+  try {
+    let { description = '', full_time, location = '', page = 1 } = req.query;
+    description = description ? encodeURIComponent(description) : '';
+    location = location ? encodeURIComponent(location) : '';
+    full_time = full_time === 'true' ? '&full_time=true' : '';
+
+    if (page) {
+      page = parseInt(page);
+      page = isNaN(page) ? '' : `&page=${page}`;
+    }
+
+    const query = `https://jobs.github.com/positions.json?description=${description}&location=${location}${full_time}${page}`;
+    const result = await axios.get(query);
+    res.send(result.data);
+  } catch (error) {
+    res.status(400).send('Error while getting list of jobs.Try again later.');
+  }
+});
+
 // If no API routes are hit, send the React app
 router.use(function(req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
