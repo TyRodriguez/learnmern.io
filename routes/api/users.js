@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
-const {User} = require("../../models");
+const { User } = require("../../models");
 
 router.post("/register", (req, res) => {
   // Form validation
@@ -19,7 +19,8 @@ router.post("/register", (req, res) => {
       return res.status(400).json({ email: "Email already exists" });
     } else {
       const newUser = new User({
-        name: req.body.name,
+        firstName: req.body.firstname,
+        lastName: req.body.lastname,
         email: req.body.email,
         password: req.body.password
       });
@@ -84,6 +85,5 @@ router.post("/login", (req, res) => {
     });
   });
 });
-
 
 module.exports = router;

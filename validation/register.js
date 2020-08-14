@@ -1,36 +1,47 @@
 const Validator = require("validator");
 const isEmpty = require("is-empty");
 
-module.exports = function validateRegisterInput(data) {
+module.exports = function validateSignUpInput(data) {
   let errors = {};
-  // Convert empty fields to an empty string so we can use validator functions
-  data.name = !isEmpty(data.name) ? data.name : "";
+
+  //Convert empty fields to an empty string so we can use validator functions
+  data.firstname = !isEmpty(data.firstname) ? data.firstname : "";
+  data.lastname = !isEmpty(data.lastname) ? data.lastname : "";
   data.email = !isEmpty(data.email) ? data.email : "";
   data.password = !isEmpty(data.password) ? data.password : "";
-  data.password2 = !isEmpty(data.password2) ? data.password2 : "";
-  // Name checks
-  if (Validator.isEmpty(data.name)) {
-    errors.name = "Name field is required";
+  data.confirmPassword = !isEmpty(data.confirmPassword)
+    ? data.confirmPassword
+    : "";
+
+  //Name checks
+  if (Validator.isEmpty(data.firstname)) {
+    errors.firstname = "First name is required";
   }
-  // Email checks
+  if (Validator.isEmpty(data.lastname)) {
+    errors.lastname = "First name is required";
+  }
+
+  //email checks
   if (Validator.isEmpty(data.email)) {
-    errors.email = "Email field is required";
+    errors.email = "email required";
   } else if (!Validator.isEmail(data.email)) {
-    errors.email = "Email is invalid";
+    errors.email = "email invalid";
   }
+
   // Password checks
   if (Validator.isEmpty(data.password)) {
     errors.password = "Password field is required";
   }
-  if (Validator.isEmpty(data.password2)) {
-    errors.password2 = "Confirm password field is required";
+  if (Validator.isEmpty(data.confirmPassword)) {
+    errors.confirmPassword = "Confirm password field is required";
   }
-  if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
-    errors.password = "Password must be at least 6 characters";
+  if (!Validator.isLength(data.password, { min: 8, max: 30 })) {
+    errors.password = "Password must be at least 8 characters";
   }
-  if (!Validator.equals(data.password, data.password2)) {
-    errors.password2 = "Passwords must match";
+  if (!Validator.equals(data.password, data.confirmPassword)) {
+    errors.confirmPassword = "Passwords must match";
   }
+
   return {
     errors,
     isValid: isEmpty(errors)
