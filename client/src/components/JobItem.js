@@ -16,7 +16,7 @@ const JobItem = (props) => {
   return (
     <div className="job-item" index={index + 1}>
       <div className="company-logo">
-        <img src={company_logo} alt={company} width="100" height="100" />
+        <img src={company_logo} alt={company} width="100" height="100"></img>
       </div>
       <div className="job-info">
         <div className="job-title">{title}</div>

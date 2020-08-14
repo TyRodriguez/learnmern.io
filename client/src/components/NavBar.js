@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import "../App.css";
-import { Box, Typography, Button, IconButton } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 // import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
-import {BrowserRouter, Link, Switxh, Route} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import logo from '../learnmern-logo.png'
 
 

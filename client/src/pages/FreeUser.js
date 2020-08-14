@@ -23,7 +23,7 @@ class FreeUser extends Component {
       <div>
       <IframeResizer
         log
-        src="https://stackblitz.com/edit/mern-expamle-4?embed=1&file=index.js"
+        src="https://stackblitz.com/edit/mern-blog-working?file=src%2Fpages%2FBlogCreatePost.js"
         style={{
             width: '95vw',
             height: '80vh',

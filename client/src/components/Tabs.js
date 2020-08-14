@@ -7,6 +7,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import IframeResizer from 'iframe-resizer-react';
+import '../App.js';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -44,7 +45,7 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "black"
   },
 }));
 
@@ -69,7 +70,7 @@ export default function SimpleTabs() {
       <TabPanel value={value} index={0}>
       <IframeResizer
         log
-        src="https://stackblitz.com/edit/angular?embed=1"
+        src="https://stackblitz.com/edit/mern-blog-working?file=src%2Fpages%2FBlogCreatePost.js"
         style={{
             width: '95vw',
             height: '80vh',

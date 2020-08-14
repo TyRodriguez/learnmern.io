@@ -69,3 +69,7 @@ html {
 .logo {
   width: 200px;
 }
+
+.MuiTabs-flexContainer {
+  background: "white";
+}
