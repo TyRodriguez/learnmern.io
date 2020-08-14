@@ -49,6 +49,8 @@ router.use("/api", apiRoutes);
 app.post("/signup", (req, res) => {
   const today = new Date();
   const userData = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     email: req.body.email,
     password: req.body.password,
     created: today
