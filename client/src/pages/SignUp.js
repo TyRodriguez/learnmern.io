@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
-
+import API from "../utils/API.js"
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
@@ -57,7 +57,7 @@ class SignUp extends Component {
       password: this.state.password,
       confirmPassword: this.state.confirmPassword
     };
-    console.log(newUser);
+    API.signUp(newUser).then(({data})=> console.log(data))
   };
 
   render() {

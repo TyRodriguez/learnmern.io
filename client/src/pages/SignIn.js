@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
 import Box from "@material-ui/core/Box";
+import API from "../utils/API.js"
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -30,7 +31,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-class SignIn extends Component {
+class SignInComp extends Component {
   constructor() {
     super();
     this.state = {
@@ -50,7 +51,8 @@ class SignIn extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    console.log(userData);
+    console.log(userData)
+    API.signIn(userData).then(({data})=> console.log(data))
   };
 
   render() {
@@ -120,4 +122,4 @@ class SignIn extends Component {
   }
 }
 
-export default SignIn;
+export default SignInComp;
