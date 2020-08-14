@@ -60,16 +60,16 @@ export default function SimpleTabs() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="App 1" {...a11yProps(0)} />
-          <Tab label="App 2" {...a11yProps(1)} />
-          <Tab label="App 3" {...a11yProps(2)} />
-          <Tab label="App 4" {...a11yProps(3)} />
+          <Tab label="To Do" {...a11yProps(0)} />
+          <Tab label="Blog" {...a11yProps(1)} />
+          <Tab label="Node Express" {...a11yProps(2)} />
+          <Tab label="Read Me" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
       <IframeResizer
         log
-        src="https://stackblitz.com/edit/angular?embed=1"
+        src="https://stackblitz.com/edit/mern-todo"
         style={{
             width: '95vw',
             height: '80vh',
@@ -80,7 +80,7 @@ export default function SimpleTabs() {
       <TabPanel value={value} index={1}>
       <IframeResizer
         log
-        src="https://stackblitz.com/edit/mern-to-do-example?embed=1&file=index.js"
+        src="https://stackblitz.com/edit/mern-blog-example?file=data%2Fmodels%2FArticles.js"
         style={{
             width: '95vw',
             height: '80vh',
@@ -91,7 +91,7 @@ export default function SimpleTabs() {
       <TabPanel value={value} index={2}>
       <IframeResizer
         log
-        src="https://stackblitz.com/edit/mern-example-3?file=index.js"
+        src="https://stackblitz.com/edit/node-express-ejs-example"
         style={{
             width: '95vw',
             height: '80vh',
@@ -102,7 +102,7 @@ export default function SimpleTabs() {
       <TabPanel value={value} index={3}>
       <IframeResizer
         log
-        src="https://stackblitz.com/edit/mern-expamle-4?embed=1&file=index.js"
+        src="https://stackblitz.com/edit/react-blank-example?file=index.js"
         style={{
             width: '95vw',
             height: '80vh',

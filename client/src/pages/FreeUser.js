@@ -5,18 +5,17 @@ import "../App.js";
 import IframeResizer from "iframe-resizer-react";
 import { Box, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import logo from '../learnmern-logo.png';
 
 class FreeUser extends Component {
   render() {
     return (
       <div>
         <Box display="flex" bgcolor="grey.200" p={2} alignItems="center">
-          <Button>
-            <Link to="/free">LearnMern</Link>
-          </Button>
+        <Link to="/"><img className="logo" src={logo} alt="Logo" /></Link>
           <Box flexGrow={1} textAlign="right">
             <Button color="primary">
-              <Link to="/jobs">Jobs</Link>
+              <Link to="/members">More Apps</Link>
             </Button>
             <Button color="primary">
               <Link to="/signin">Sign In</Link>
