@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "concurrently \"npm start\",  \"cd client && npm start\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +18,8 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "pusher": "^3.0.1"
-  }
+    "pusher": "^3.0.1",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
